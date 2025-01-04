@@ -1,0 +1,56 @@
+﻿@API_HostAddress = http://localhost:5055/api
+@token = eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxMiIsInVuaXF1ZV9uYW1lIjoibmF0aGFuIiwicm9sZSI6Ik1lbWJlciIsIm5iZiI6MTczNTYzMjU5NiwiZXhwIjoxNzM2MjM3Mzk2LCJpYXQiOjE3MzU2MzI1OTZ9.AvbkQgjsL5UCKmXemp7dQpODwFRyD0gN2e2vfxQ5O2_SemEXPj7R5wzaukiJvM2tbEZUcDqnll9OmMMqdv2EOw
+@userName = nathan
+@password = Pass01
+
+GET {{API_HostAddress}}/bad-request
+Accept: application/json
+
+### USERS
+GET {{API_HostAddress}}/users
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+GET {{API_HostAddress}}/users/5
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+GET {{API_HostAddress}}/users/margo
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###
+PUT {{API_HostAddress}}/users
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "introduction": "Hello there",
+  "lookingFor": "beer",
+  "city": "Reading",
+  "country": "England"
+}
+
+### ACCOUNT
+POST {{API_HostAddress}}/account/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "nathan",
+  "knownAs": "nathan",
+  "gender": "male",
+  "dateOfBirth": "1985-01-01",
+  "city": "london",
+  "country": "UK",
+  "password": "Pass01"
+}
+
+
+
+### ADMIN
+POST {{API_HostAddress}}/admin/
+Accept: application/json

@@ -1,0 +1,6 @@
+# 1. Create user
+- register user
+- Save user to database
+- Get user by id
+
+# 2. Get user data for your profile
